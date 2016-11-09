@@ -2,6 +2,10 @@ angular.module('starter.controllers',['ionic'])
 
 .controller('MapController', function($scope, $ionicLoading) {
  console.log('entro');
+   $scope.init = function () {
+            $scope.googlemaps();  
+        };
+  $scope.googlemaps = function () {
     google.maps.event.addDomListener(window, 'load', function() {
         var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
  
@@ -24,6 +28,9 @@ angular.module('starter.controllers',['ionic'])
  
         $scope.map = map;
     });
+  };
+
+   $scope.init();
  
 })
 
