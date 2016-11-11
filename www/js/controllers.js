@@ -21,8 +21,22 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, $ionicPush) {
   $scope.settings = {
     enableFriends: true
   };
+  
+  $ionicPush.register().then(function(t) {
+      return $ionicPush.saveToken(t);
+    }).then(function(t) {
+      console.log('Token saved:', t.token);
+  });
+  
+  $scope.$on('cloud:push:notification', function(event, datas) {
+    console.log("Datas from Push Notification");
+    if(datas.message.app.asleep) {
+      $state.go('tab/account'); 
+    }
+  });
+
 });
