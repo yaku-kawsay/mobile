@@ -41,8 +41,7 @@ angular.module('starter.controllers', [])
 
 })
 
-
-.controller('MapCtrl', function($scope, $timeout, $cordovaGeolocation, uiGmapGoogleMapApi, Yelp, Markers) {
+.controller('MapCtrl', function($scope, $timeout, $cordovaGeolocation, uiGmapGoogleMapApi, Markers) {
   var initializeMap = function(position) {
     $scope.map = { 
       center: { 
@@ -51,21 +50,26 @@ angular.module('starter.controllers', [])
       }, 
       zoom: 15
     };
-
   };
   console.log("markers");
   console.log(Markers);
   $scope.markers = Markers;
   uiGmapGoogleMapApi.then(function(maps) {
-      // Don't pass timeout parameter here; that is handled by setTimeout below
-      var posOptions = {enableHighAccuracy: false};
-      $cordovaGeolocation.getCurrentPosition(posOptions).then(function(position) {
-        console.log("Got location: " + JSON.stringify(position));
-        initializeMap(position);
-      }, function(error) {
-        console.log(error);
-      });
+    if( typeof _.contains === 'undefined' ) {
+        _.contains = _.includes;
+      }
+      if( typeof _.object === 'undefined' ) {
+        _.object = _.zipObject;
+    }
+    
+    var posOptions = {enableHighAccuracy: false};
+    $cordovaGeolocation.getCurrentPosition(posOptions).then(function(position) {
+      console.log("Got location: " + JSON.stringify(position));
+      initializeMap(position);
+    }, function(error) {
+      console.log(error);
     });
+  });
 
    /* $scope.markers = [];
     $scope.infoVisible = false;

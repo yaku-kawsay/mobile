@@ -71,21 +71,23 @@ angular.module('starter.services', ['starter.constants'])
     {
       "id": "0",
       "coords": {
-        "latitude": "45.5200",
-        "longitude": "-122.6819"
+        "latitude": "-17.4194",
+        "longitude": "-66.1325"
       },
       "window": {
-        "title": "Portland, OR"
+        "title": "Sensor de humedad 1",
+        "description": "Descripcion"
       }
     },
     {
       "id": "1",
       "coords": {
-        "latitude": "40.7903",
-        "longitude": "-73.9597"
+        "latitude": "-17.3333",
+        "longitude": "-66.1667"
       },
       "window" : {
-        "title": "Manhattan New York, NY"
+        "title": "Sensor de humedad 2",
+        "description": "Descripcion"
       }
     }
   ];
