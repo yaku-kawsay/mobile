@@ -1,1 +1,10 @@
-/* Empty. Add your own CSS if you like */
+@charset "UTF-8";
+
+.angular-google-map-container {
+  height: 400px;
+}
+
+p {
+  padding: 10px;
+  text-align: center;
+}

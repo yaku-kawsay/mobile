@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['starter.constants'])
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
@@ -47,4 +47,47 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.factory('Yelp', function($http, $q, apiUrl) {
+    return {
+      search: function(position) {
+        return $http({
+          method: "get",
+          url: apiUrl + 'api/v1/yelp/search',
+          params: {
+            limit: 10,
+            radius_filter: 500,
+            sort: 1,
+            ll: [position.coords.latitude, position.coords.longitude].join()
+          }
+        });
+      }
+    };
+  })
+
+.factory("Markers", function(){
+  var Markers = [
+    {
+      "id": "0",
+      "coords": {
+        "latitude": "45.5200",
+        "longitude": "-122.6819"
+      },
+      "window": {
+        "title": "Portland, OR"
+      }
+    },
+    {
+      "id": "1",
+      "coords": {
+        "latitude": "40.7903",
+        "longitude": "-73.9597"
+      },
+      "window" : {
+        "title": "Manhattan New York, NY"
+      }
+    }
+  ];
+  return Markers;
 });
