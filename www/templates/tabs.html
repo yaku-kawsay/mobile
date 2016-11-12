@@ -9,21 +9,24 @@ navigation history that also transitions its views in and out.
   <ion-tab title="Notificaciones" icon-off="ion-android-notifications-none" icon-on="ion-android-notifications-none" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
   </ion-tab>
-
-  <!-- Chats Tab -->
-  <ion-tab title="Comentarios" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
-  </ion-tab>
-
     <!-- Chats Tab -->
   <ion-tab title="Mapa" icon-off="ion-ios-location" icon-on="ion-ios-location" href="#/tab/map">
     <ion-nav-view name="tab-map"></ion-nav-view>
   </ion-tab>
 
    <!-- Chats Tab -->
-  <ion-tab title="Historia" icon-off="ion-ios-book-outline" icon-on="ion-ios-book-outline" href="#/tab/historia">
-    <ion-nav-view name="tab-historia"></ion-nav-view>
+  <ion-tab title="Historia" icon-off="ion-ios-book-outline" icon-on="ion-ios-book-outline" href="#/tab/history">
+    <ion-nav-view name="tab-history"></ion-nav-view>
   </ion-tab>
 
-
+  <ion-tab title="Mas información" icon-off="ion-ios-information-outline" icon-on="ion-ios-information-outline" href="#/tab/information">
+    <ion-nav-view name="tab-information"></ion-nav-view>
+  </ion-tab>
+  
 </ion-tabs>
+
+  <ion-footer-bar>
+     <button  ui-sref="inicio" type="button" class="bar bar-footer bar-positive" button-outline button-positive"><center ><p>Menu</p></center>
+          </button>
+
+ </ion-footer-bar>

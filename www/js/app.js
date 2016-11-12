@@ -42,33 +42,20 @@ angular.module('starter', ['ionic', 'ionic.cloud', 'ngCordova', 'uiGmapgoogle-ma
   $stateProvider
 
   // setup an abstract state for the tabs directive
+
+    
+    .state('inicio', {
+    url: '/inicio',
+    templateUrl: 'templates/inicio.html'
+  })    
+
     .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
 
-  // Each tab has its own nav history stack:
-
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+ 
 
   .state('tab.account', {
     url: '/account',
@@ -80,16 +67,32 @@ angular.module('starter', ['ionic', 'ionic.cloud', 'ngCordova', 'uiGmapgoogle-ma
     }
   })
 
-  .state('tab.historia', {
-    url: '/historia',
+  .state('tab.history', {
+    url: '/history',
     views: {
-      'tab-historia': {
-        templateUrl: 'templates/historia.html',
-        controller: 'AccountCtrl'
+      'tab-history': {
+        templateUrl: 'templates/history.html'
+
       }
     }
   })
+    .state('tab.information', {
+    url: '/information',
+    views: {
+      'tab-information': {
+        templateUrl: 'templates/more-information.html'
 
+      }
+    }
+  })
+/*  .state('tab.more-information', {
+    url: '/information',
+    views: {
+      'tab-information': {
+        templateUrl: 'templates/more-information.html'
+      }
+    }
+  })*/
 
 .state('tab.map', {
     url: '/map',
@@ -102,7 +105,7 @@ angular.module('starter', ['ionic', 'ionic.cloud', 'ngCordova', 'uiGmapgoogle-ma
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/map');
+  $urlRouterProvider.otherwise('/inicio');
 
   $ionicCloudProvider.init({
           "core": {
