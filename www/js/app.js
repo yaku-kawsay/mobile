@@ -50,15 +50,6 @@ angular.module('starter', ['ionic', 'ionic.cloud', 'ngCordova', 'uiGmapgoogle-ma
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
 
   .state('tab.chats', {
       url: '/chats',
@@ -89,6 +80,17 @@ angular.module('starter', ['ionic', 'ionic.cloud', 'ngCordova', 'uiGmapgoogle-ma
     }
   })
 
+  .state('tab.historia', {
+    url: '/historia',
+    views: {
+      'tab-historia': {
+        templateUrl: 'templates/historia.html',
+        controller: 'AccountCtrl'
+      }
+    }
+  })
+
+
 .state('tab.map', {
     url: '/map',
     views: {
@@ -100,7 +102,7 @@ angular.module('starter', ['ionic', 'ionic.cloud', 'ngCordova', 'uiGmapgoogle-ma
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/map');
 
   $ionicCloudProvider.init({
           "core": {

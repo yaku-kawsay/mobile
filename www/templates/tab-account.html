@@ -1,9 +1,16 @@
-<ion-view view-title="Notificaciones">
+<ion-view  hide-back-button="true" cache-view="false" view-title="Notificaciones">
+ <ion-header-bar>
+        </ion-header-bar>
+  <ion-tabs class="tabs-positive tabs-icon-top">
+  <ion-tab title="Diario" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+  <div>
   <ion-content>
     <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
+      <ion-item ng-repeat="notificacion in notificaciones" >
+       <p> {{notificacion.title}}</p>
+        
+      </ion-item>
     </ion-list>
   </ion-content>
-</ion-view>
+  </div>
+  </ion-tab>

@@ -22,9 +22,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope, $ionicPush) {
-  $scope.settings = {
-    enableFriends: true
-  };
+ $scope.notificaciones = [
+    { title: 'Helada daña 43 hectáreas de papa, arveja y oca en Vinto' },
+    { title: 'Alalay, Quenamari y Coña Coña, casi secas'},
+    { title: 'Declaran en emergencia a Cercado por sequía y activan plan de mitigación' },
+    { title: 'Declaran emergencia por sequía en la ciudad'},
+    { title: 'Municipios afectados por sequía sin recursos pese a emisión de 12 decretos'},
+    { title: 'Nivel de agua de la Alalay baja y peces están en riesgo'}
+  ];
   
   $ionicPush.register().then(function(t) {
       return $ionicPush.saveToken(t);
