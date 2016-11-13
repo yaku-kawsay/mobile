@@ -1,2 +1,3 @@
 angular.module('starter.constants', [])
-  .constant('apiUrl', 'https://angular-google-maps-example.herokuapp.com/');
+    .constant("CORE_API_ENDPOINT", "http://10.100.160.39:8080/yakukawsay/resoures");
+

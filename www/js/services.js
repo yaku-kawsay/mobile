@@ -43,4 +43,26 @@ angular.module('starter.services', ['starter.constants'])
     }
   ];
   return Markers;
+})
+
+.factory('YakuService', function($http) {
+  var users = [];
+
+  return {
+    getDevices: function(){
+      return $http.get("http://10.100.160.39:8080/yakukawsay/resoures/devices").then(function(response){
+        users = response;
+        console.log(users);
+        return users;
+      });
+    },
+
+    getDeviceData: function(){
+      return $http.get("http://10.100.160.39:8080/yakukawsay/resoures/devices/1/datas").then(function(response){
+        users = response;
+        return users;
+      });
+    }
+
+  }
 });
