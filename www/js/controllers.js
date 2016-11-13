@@ -1,10 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('AccountCtrl', function($scope, $ionicPush, YakuService) {
-  console.log('holas');
-  YakuService.getDevices().then(function(devices){
-  console.log(devices);
-});
+
 
  $scope.notificaciones = [
     { title: 'Helada daña 43 hectáreas de papa, arveja y oca en Vinto' },
@@ -30,21 +27,25 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('MapCtrl', function($scope, $timeout, $cordovaGeolocation, uiGmapGoogleMapApi, Markers) {
+.controller('MapCtrl', function($scope, $timeout, $cordovaGeolocation, uiGmapGoogleMapApi, Markers,YakuService) {
+  YakuService.getDevices().then(function(devices){
+         $scope.device = devices.data;
+
+})
   var initializeMap = function(position) {
+    console.log('position');
+    console.log(position);
     $scope.map = { 
       center: { 
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude
+        latitude: -17.370294,
+        longitude: -66.135580
       }, 
-      zoom: 15
+      zoom: 14
     };
   };
 
-
   $scope.markers = Markers;
-  console.log(Markers);
-    console.log("markers");
+
   uiGmapGoogleMapApi.then(function(maps) {
     if( typeof _.contains === 'undefined' ) {
         _.contains = _.includes;

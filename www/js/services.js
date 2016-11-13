@@ -22,22 +22,22 @@ angular.module('starter.services', ['starter.constants'])
     {
       "id": "0",
       "coords": {
-        "latitude": "-17.4194",
-        "longitude": "-66.1325"
+        "latitude": "-17.372841",
+        "longitude": "-66.138232"
       },
       "window": {
-        "title": "Sensor de humedad 1",
+        "title": "Sensor de Temperatura 1",
         "description": "Descripcion"
       }
     },
     {
       "id": "1",
       "coords": {
-        "latitude": "-17.3333",
-        "longitude": "-66.1667"
+        "latitude": "-17.370294",  
+        "longitude": "-66.135580"
       },
       "window" : {
-        "title": "Sensor de humedad 2",
+        "title": "Sensor de Temperatura 2",
         "description": "Descripcion"
       }
     }
@@ -50,19 +50,17 @@ angular.module('starter.services', ['starter.constants'])
 
   return {
     getDevices: function(){
-      return $http.get("http://10.100.160.39:8080/yakukawsay/resoures/devices").then(function(response){
+      return $http.get("http://10.100.160.39:8080/yakukawsay/resources/devices").then(function(response){
         users = response;
-        console.log(users);
         return users;
       });
     },
 
     getDeviceData: function(){
-      return $http.get("http://10.100.160.39:8080/yakukawsay/resoures/devices/1/datas").then(function(response){
+      return $http.get("http://10.100.160.39:8080/yakukawsay/resources/devices/1/datas").then(function(response){
         users = response;
         return users;
       });
     }
-
   }
 });
